@@ -17,9 +17,9 @@ function showList(array) {
 }
 
 function commands(array) {
-    var command = message.content.split(" ");
-    var commandRequest = command[0];
-    if (commandRequest == "//add") {
+    const command = message.content.trim().split(/ +/);
+    const commandRequest = args.shift().toLowerCase();
+    if (commandRequest === "//add") {
         let note = "";
         for (let i = 1; i < command.length; i++) {
             note.concat(command[i]);
@@ -29,7 +29,7 @@ function commands(array) {
         message.reply("notlara eklendi");
 
         showList(array);
-    } else if (commandRequest == "//remove") {
+    } else if (commandRequest === "//remove") {
         let removedIndex = command[1] - 1;
         if (typeof command[1] !== "number" && !Number.isNaN(command[1])) {
             message.reply("ne");
@@ -39,7 +39,7 @@ function commands(array) {
             message.reply("notlardan silindi.");
             showList(array);
         }
-    } else if (commandRequest == "//show") {
+    } else if (commandRequest === "//show") {
         showList(array);
     }
     //message.channel.send("content")
