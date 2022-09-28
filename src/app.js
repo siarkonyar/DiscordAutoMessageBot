@@ -18,7 +18,7 @@ function showList(array) {
 
 function commands(array) {
     var command = message.content.split(" ");
-    var commandRequest = commandRequest[0];
+    var commandRequest = command[0];
     if (commandRequest == "//add") {
         let note = "";
         for (let i = 1; i < command.length; i++) {
