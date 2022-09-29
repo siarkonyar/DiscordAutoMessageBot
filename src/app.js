@@ -74,9 +74,4 @@ client.on("messageCreate", (message) => {
     }
 });
 
-client.on("messageCreate", (message) => {
-    if (message.author.id === process.env.SIAR_ID) {
-    }
-});
-
 client.login(process.env.DJS_TOKEN);
