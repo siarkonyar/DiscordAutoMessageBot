@@ -74,31 +74,31 @@ client.on("messageCreate", (message) => {
                 }
                 siarNotlar.push(note);
 
-                message.send('notlara eklendi');
+                message.channel.send('notlara eklendi');
 
                 for (let i = 0; i < siarNotlar.length; i++) {
                     let line = i + 1;
-                    message.send(line + '. ' + siarNotlar[i]);
+                    message.channel.send(line + '. ' + siarNotlar[i]);
                 }
 
             } else if (commandRequest === '//remove') {
                 let removedIndex = command[1] - 1;
                 if (typeof command[1] !== 'number') {
-                    message.reply('ne');
+                    message.channel.send('ne');
                 } else {
                     siarNotlar.splice(removedIndex, 1);
 
-                    message.send('notlardan silindi.');
+                    message.channel.send('notlardan silindi.');
 
                     for (let i = 0; i < siarNotlar.length; i++) {
                         let line = i + 1;
-                        message.send(line + '. ' + siarNotlar[i]);
+                        message.channel.send(line + '. ' + siarNotlar[i]);
                     }
                 }
             } else if (commandRequest === '//show') {
                 for (let i = 0; i < siarNotlar.length; i++) {
                     let line = i + 1;
-                    message.send(line + '. ' + siarNotlar[i]);
+                    message.channel.send(line + '. ' + siarNotlar[i]);
                 }
             }
         }
