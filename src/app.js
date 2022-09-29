@@ -18,7 +18,7 @@ function showList(array) {
 
 function commands(array) {
     const command = message.content.trim().split(/ +/);
-    const commandRequest = args.shift().toLowerCase();
+    const commandRequest = command.shift().toLowerCase();
     if (commandRequest === "//add") {
         let note = "";
         for (let i = 1; i < command.length; i++) {
